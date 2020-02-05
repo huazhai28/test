@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	<!-- 方便struts不过滤ckfinder的文件4传请求 潘业平 -->
+	<constant name="struts.action.excludePattern" value="/ckfinder.*" />
+
+	<!-- 设置模式为开发模式，项目部署完成后注意设置为false（默认） -->
+	<constant name="struts.devMode" value="true" />
+	<!-- 解决中文问题 -->
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+
+ <package name="query" extends="struts-default">
+    
+		<action name="insert" class="BaseDao" method="insert">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+	</package>
+
+
+</struts>
